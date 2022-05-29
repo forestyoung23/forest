@@ -17,6 +17,7 @@
         <module>forest-transport</module>
         <module>forest-client</module>
         <module>forest-server</module>
+        <module>forest-config/forest-config-api</module>
     </modules>
 
     <name>forest</name>
