@@ -29,8 +29,5 @@ public class JsonDecoderTest {
         TestBean decode = decoder.decode(encode, TestBean.class);
         assertNotNull(decode);
         assertEquals("123", decode.getName());
-
     }
-
-
 } 
