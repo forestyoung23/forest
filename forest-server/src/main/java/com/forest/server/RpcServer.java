@@ -20,7 +20,6 @@ import java.io.OutputStream;
  * @date 2022年07月03日 15:42
  */
 @Slf4j
-@NoArgsConstructor
 public class RpcServer {
     private RpcServerConfig config;
     private TransportServer net;
@@ -28,6 +27,10 @@ public class RpcServer {
     private Decoder decoder;
     private ServiceManager serviceManager;
     private ServiceInvoker serviceInvoker;
+
+    public RpcServer() {
+        this(new RpcServerConfig());
+    }
 
     public RpcServer(RpcServerConfig config) {
         this.config = config;

@@ -18,6 +18,7 @@
         <module>forest-client</module>
         <module>forest-server</module>
         <module>forest-config/forest-config-api</module>
+        <module>forest-example</module>
     </modules>
 
     <name>forest</name>

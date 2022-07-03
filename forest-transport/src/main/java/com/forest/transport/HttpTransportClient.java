@@ -43,7 +43,7 @@ public class HttpTransportClient implements TransportClient {
             urlConnection.setDoOutput(true);
             // TODO: 2022/6/30 usecache作用？
             urlConnection.setUseCaches(false);
-            urlConnection.setRequestMethod("post");
+            urlConnection.setRequestMethod("POST");
             urlConnection.connect();
             IOUtils.copy(data, urlConnection.getOutputStream());
             int responseCode = urlConnection.getResponseCode();
