@@ -11,5 +11,30 @@
 
     <artifactId>forest-server</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.forest</groupId>
+            <artifactId>forest-protocol</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.forest</groupId>
+            <artifactId>forest-transport</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.forest</groupId>
+            <artifactId>forest-serialization</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.forest</groupId>
+            <artifactId>forest-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+    </dependencies>
 </project>
