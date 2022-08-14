@@ -74,6 +74,6 @@ public class ServiceDesc {
 
     @Override
     public String toString() {
-        return "clazz="+clazz +",method="+method+"，returnType=" +returnType+",parameterTypes="+ Arrays.toString(paramsTypes);
+        return "clazz=" + clazz + ",method=" + method + "，returnType=" + returnType + ",parameterTypes=" + Arrays.toString(paramsTypes);
     }
 }

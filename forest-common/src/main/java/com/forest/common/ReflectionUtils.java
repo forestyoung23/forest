@@ -1,6 +1,5 @@
 package com.forest.common;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
@@ -18,7 +17,7 @@ public class ReflectionUtils {
      * @author Forest Dong
      * @date 2022/6/30 下午10:42
      */
-    public static <T> T newInstance(Class<T> clazz){
+    public static <T> T newInstance(Class<T> clazz) {
         try {
             return clazz.getConstructor().newInstance();
         } catch (Exception e) {

@@ -6,5 +6,6 @@ package com.forest.example;
  */
 public interface ClacService {
     int add(int a, int b);
+
     int minus(int a, int b);
 }

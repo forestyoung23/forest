@@ -14,6 +14,7 @@ import java.net.URL;
  */
 public class HttpTransportClient implements TransportClient {
     private String url;
+
     /**
      * 创建连接
      *
@@ -38,7 +39,7 @@ public class HttpTransportClient implements TransportClient {
     @Override
     public InputStream write(InputStream data) {
         try {
-            HttpURLConnection urlConnection = (HttpURLConnection)new URL(url).openConnection();
+            HttpURLConnection urlConnection = (HttpURLConnection) new URL(url).openConnection();
             // urlConnection.setDoInput(true);
             urlConnection.setDoOutput(true);
             // TODO: 2022/6/30 usecache作用？
@@ -47,13 +48,13 @@ public class HttpTransportClient implements TransportClient {
             urlConnection.connect();
             IOUtils.copy(data, urlConnection.getOutputStream());
             int responseCode = urlConnection.getResponseCode();
-            if (HttpURLConnection.HTTP_OK == responseCode ) {
+            if (HttpURLConnection.HTTP_OK == responseCode) {
                 return urlConnection.getInputStream();
             } else {
                 return urlConnection.getErrorStream();
             }
         } catch (IOException e) {
-           throw new IllegalStateException(e);
+            throw new IllegalStateException(e);
         }
     }
 

@@ -3,7 +3,8 @@ package test.com.forest.ser;
 import com.forest.ser.Encoder;
 import com.forest.ser.JsonEncoder;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertNotNull;
 
 /**
  * JsonEncoder Tester.

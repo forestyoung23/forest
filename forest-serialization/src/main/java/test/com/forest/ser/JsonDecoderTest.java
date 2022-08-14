@@ -5,7 +5,9 @@ import com.forest.ser.Encoder;
 import com.forest.ser.JsonDecoder;
 import com.forest.ser.JsonEncoder;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 /**
  * JsonDecoder Tester.
