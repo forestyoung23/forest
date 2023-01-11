@@ -1,6 +1,7 @@
 package com.forest.zkclient;
 
 import org.apache.zookeeper.*;
+import org.apache.zookeeper.client.ZKClientConfig;
 import org.apache.zookeeper.data.Stat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,6 +56,24 @@ public class ZkClient implements Watcher {
         zk.create(NODE_MASTER, bytes, ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL, createMasterCallback, bytes);
     }
 
+    void masterExists() {
+        // zk.exists("/master", );
+    }
+
+    AsyncCallback.StringCallback masterCreateCallback = (rc, path, ctx, name) -> {
+        switch (KeeperException.Code.get(rc)) {
+            case CONNECTIONLOSS:
+                // checkMaster();
+                break;
+            case OK:
+                LOG.info("当选主节点");
+                isLeader = true;
+                break;
+            default:
+                LOG.error("运行异常");
+                isLeader = false;
+        }
+    };
     AsyncCallback.StringCallback createMasterCallback = (rc, path, ctx, name) -> {
         switch (KeeperException.Code.get(rc)) {
             case CONNECTIONLOSS:
@@ -74,7 +93,7 @@ public class ZkClient implements Watcher {
         }
     };
 
-    private boolean checkMaster(String path, Object ctx) {
+    private boolean  checkMaster(String path, Object ctx) {
         while (true) {
             try {
                 Stat stat = new Stat();
@@ -98,6 +117,8 @@ public class ZkClient implements Watcher {
     public void process(WatchedEvent event) {
         System.err.println("zookeeper启动成功");
     }
+
+
 
     public static void main(String[] args) throws InterruptedException, IOException {
         ZkClient zkClient = new ZkClient("localhost:2181");

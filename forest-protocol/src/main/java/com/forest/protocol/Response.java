@@ -2,6 +2,8 @@ package com.forest.protocol;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * 表示返回
  *
@@ -9,7 +11,7 @@ import lombok.Data;
  * @date 2022年06月30日 22:26
  */
 @Data
-public class Response {
+public class Response implements Serializable {
     /**
      * 状态码
      */

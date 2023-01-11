@@ -1,6 +1,7 @@
-package com.forest.ser;
+package com.forest.ser.json;
 
 import com.alibaba.fastjson.JSON;
+import com.forest.ser.Encoder;
 
 /**
  * @author Forest Dong
