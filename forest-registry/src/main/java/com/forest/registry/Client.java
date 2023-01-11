@@ -37,6 +37,7 @@ public class Client implements Watcher {
         }
 
     }
+
     @Override
     public void process(WatchedEvent event) {
         System.err.println(event);

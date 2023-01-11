@@ -1,7 +1,6 @@
 package com.forest.ser;
 
-import java.io.*;
-import java.util.Arrays;
+import java.io.Serializable;
 
 /**
  * @author Forest Dong
