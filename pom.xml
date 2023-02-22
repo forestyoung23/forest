@@ -22,18 +22,19 @@
     </modules>
 
     <name>forest</name>
-    <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
 
     <properties>
-        <java-version>11</java-version>
+        <java.version>17</java.version>
         <commons.version>2.2</commons.version>
         <jetty.version>9.2.10.v20150310</jetty.version>
         <fastjson.version>1.2.44</fastjson.version>
-        <junit-version>4.12</junit-version>
+        <junit.version>4.12</junit.version>
         <lombok.version>1.18.8</lombok.version>
-        <sl4j-version>1.7.6</sl4j-version>
-        <logback-version>1.2.3</logback-version>
+        <sl4j.version>1.7.6</sl4j.version>
+        <logback.version>1.2.3</logback.version>
+        <springboot.version>2.7.6</springboot.version>
+        <spring.version>5.3.24</spring.version>
+        <commons-lang.version>3.12.0</commons-lang.version>
     </properties>
 
     <dependencyManagement>
@@ -54,6 +55,22 @@
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
             </dependency>
+            <!--<dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <version>${springboot-version}</version>
+            </dependency>-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -62,7 +79,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>${junit-version}</version>
+            <version>${junit.version}</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -72,13 +89,13 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>${sl4j-version}</version>
+            <version>${sl4j.version}</version>
         </dependency>
 
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>${logback-version}</version>
+            <version>${logback.version}</version>
         </dependency>
 
     </dependencies>
@@ -90,8 +107,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.3</version>
                 <configuration>
-                    <source>${java-version}</source>
-                    <target>${java-version}</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
         </plugins>
