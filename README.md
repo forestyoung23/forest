@@ -11,3 +11,6 @@
 ├── forest-transport  网络传输模块
 
 ```
+# 注册中心
+1.Zookeeper
+2.Nacos
