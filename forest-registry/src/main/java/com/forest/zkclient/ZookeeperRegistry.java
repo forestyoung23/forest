@@ -12,8 +12,8 @@ import java.util.List;
  * @date 2022年08月28日 15:46
  */
 public class ZookeeperRegistry extends AbstractRegistryService {
-    protected ZookeeperRegistry() throws Exception {
-        super();
+    public ZookeeperRegistry(String connectString) throws Exception {
+        super(connectString);
     }
 
     /**
@@ -47,18 +47,18 @@ public class ZookeeperRegistry extends AbstractRegistryService {
     }
 
     public static void main(String[] args) throws Exception {
-        RegistryService service = new ZookeeperRegistry();
-        HashMap<String, String> map = new HashMap<>();
-        map.put("qw", "123");
-        map.put("asd", "vef3");
-        ServiceInstance<Object> instance = ServiceInstance.builder().name("测试").address("127.0.0.1").port(3002).registrationTimeUTC(System.currentTimeMillis()).payload(map).build();
-        service.registry(instance);
-        Thread.sleep(10000);
-        List<ServiceInstance> list = service.lookUp("测试");
-        for (ServiceInstance serviceInstance : list) {
-            System.err.println(serviceInstance);
-
-        }
-        Thread.sleep(60000);
+//        RegistryService service = new ZookeeperRegistry();
+//        HashMap<String, String> map = new HashMap<>();
+//        map.put("qw", "123");
+//        map.put("asd", "vef3");
+//        ServiceInstance<Object> instance = ServiceInstance.builder().name("测试").address("127.0.0.1").port(3002).registrationTimeUTC(System.currentTimeMillis()).payload(map).build();
+//        service.registry(instance);
+//        Thread.sleep(10000);
+//        List<ServiceInstance> list = service.lookUp("测试");
+//        for (ServiceInstance serviceInstance : list) {
+//            System.err.println(serviceInstance);
+//
+//        }
+//        Thread.sleep(60000);
     }
 }

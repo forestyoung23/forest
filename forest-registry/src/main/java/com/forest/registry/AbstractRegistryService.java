@@ -15,10 +15,10 @@ public abstract class AbstractRegistryService implements RegistryService {
 
     protected ServiceDiscovery discovery;
 
-    protected AbstractRegistryService() throws Exception {
-        client = CuratorFrameworkFactory.newClient("127.0.0.1:2181", new RetryForever(100));
+    public AbstractRegistryService(String connectString) throws Exception {
+        client = CuratorFrameworkFactory.newClient(connectString, new RetryForever(100));
         client.start();
-        discovery = ServiceDiscoveryBuilder.builder(Object.class).basePath("/services").client(client).build();
+        discovery = ServiceDiscoveryBuilder.builder(Object.class).basePath("/forest").client(client).build();
         discovery.start();
     }
 }

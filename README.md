@@ -12,5 +12,6 @@
 
 ```
 # 注册中心
-1.Zookeeper
-2.Nacos
+
+## Zookeeper
+启动时将服务注册到注册中心
