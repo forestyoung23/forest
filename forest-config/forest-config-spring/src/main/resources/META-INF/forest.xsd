@@ -2,3 +2,4 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             xmlns="http://forest.top/schema/forest"
             targetNamespace="http://forest.top/schema/forest">
+</xsd:schema>
